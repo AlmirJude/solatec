@@ -1,27 +1,27 @@
 version: 0.2
 
 phases:
-	install:
-		runtime-versions:
-			nodejs: 20
-		commands:
-			- echo "Installing dependencies..."
-			- npm ci
+  install:
+    runtime-versions:
+      nodejs: 20
+    commands:
+      - echo "Installing dependencies..."
+      - npm ci
 
-	build:
-		commands:
-			- echo "Building frontend app..."
-			- npm run build
+  build:
+    commands:
+      - echo "Building frontend app..."
+      - npm run build
 
-	post_build:
-		commands:
-			- echo "Build completed on $(date)"
+  post_build:
+    commands:
+      - echo "Build completed on $(date)"
 
 artifacts:
-	base-directory: dist
-	files:
-		- "**/*"
+  base-directory: dist
+  files:
+    - "**/*"
 
 cache:
-	paths:
-		- node_modules/**/*
+  paths:
+    - node_modules/**/*
